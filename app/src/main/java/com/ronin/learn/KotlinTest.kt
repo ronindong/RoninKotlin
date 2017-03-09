@@ -17,6 +17,7 @@ class KotlinTest {
         json = Gson("google gson")
         json.printInfo()
         println(json.parse("gson"))
+        println(json.parse2("kotlin method overload parse2"))
     }
 
     fun testKotlinArray() {

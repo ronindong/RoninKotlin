@@ -21,7 +21,7 @@ public class ExampleUnitTest {
     @Test
     public void testKotlinInheritance() {
         KotlinTest kotlinTest = new KotlinTest();
-//        kotlinTest.testKotlinInheritance();
+        kotlinTest.testKotlinInheritance();
         kotlinTest.testKotlinArray();
     }
 
