@@ -1,22 +1,32 @@
 package com.ronin.learn.activity
 
 import android.os.Bundle
-import android.support.design.widget.FloatingActionButton
 import android.support.design.widget.Snackbar
 import android.support.v7.app.AppCompatActivity
-import android.support.v7.widget.Toolbar
+import android.support.v7.widget.LinearLayoutManager
 import android.view.View
+import android.widget.Toast
 import com.ronin.eventbus.kotlin.R
+import com.ronin.learn.adapter.MyAdapter
+import kotlinx.android.synthetic.main.activity_main.*
+import kotlinx.android.synthetic.main.content_main.*
+import org.jetbrains.anko.onClick
+import org.jetbrains.anko.startActivity
 
 class MainActivity : AppCompatActivity() {
+
+    private val list: List<String> = listOf("adf", "2sdfas", "sfa", "sfga", "wdvh", "ksdg")
+    var mAdapter: MyAdapter = MyAdapter(list)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
-        val toolbar = findViewById(R.id.toolbar) as Toolbar
+        initView()
+    }
+
+    fun initView() {
         setSupportActionBar(toolbar)
 
-        val fab = findViewById(R.id.fab) as FloatingActionButton
         fab.setOnClickListener(
                 View.OnClickListener { view ->
                     Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
@@ -24,19 +34,14 @@ class MainActivity : AppCompatActivity() {
                 }
         )
 
-        fab.setOnGenericMotionListener(View.OnGenericMotionListener { v, event ->
+        textView.onClick {
+            Toast.makeText(this,"onclick",Toast.LENGTH_SHORT).show()
+            startActivity<SecActivity>("from" to "MainActivity")
+        }
 
-
-            true
-        })
-
-        fab.setOnTouchListener(View.OnTouchListener { v, event ->
-            v.isClickable
-
-
-            false
-        })
-
+        recyclerView.layoutManager = LinearLayoutManager(this)
+        recyclerView.adapter = mAdapter
+        testInline()
 
     }
 

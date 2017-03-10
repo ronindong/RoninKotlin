@@ -8,4 +8,17 @@
     tools:context="com.ronin.learn.activity.MainActivity"
     tools:showIn="@layout/activity_main">
 
+    <FrameLayout
+        android:layout_width="384dp"
+        android:layout_height="455dp"
+        tools:layout_editor_absoluteY="0dp"
+        tools:layout_editor_absoluteX="0dp">
+
+        <android.support.v7.widget.RecyclerView
+            android:id="@+id/recyclerView"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </FrameLayout>
+
 </android.support.constraint.ConstraintLayout>
