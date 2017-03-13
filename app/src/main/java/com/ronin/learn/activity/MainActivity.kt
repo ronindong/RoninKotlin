@@ -10,6 +10,7 @@ import com.ronin.eventbus.kotlin.R
 import com.ronin.learn.adapter.MyAdapter
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.content_main.*
+import org.jetbrains.anko.find
 import org.jetbrains.anko.onClick
 import org.jetbrains.anko.startActivity
 

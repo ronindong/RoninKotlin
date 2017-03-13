@@ -14,11 +14,12 @@ public class ComponentInject {
     @Inject
     Person person;
 
+
     public void init() {
 
         MainComponent mainComponent = DaggerMainComponent.builder()
                 .mainModule(new MainModule()).build();
         mainComponent.inject(this);
-        System.out.println("init inject color: " + cloth.getColor() + ",person=" + person);
+        System.out.println("init inject color: " + cloth.getColor() + "," + person);
     }
 }

@@ -24,6 +24,7 @@ public class ExampleUnitTest {
         KotlinTest kotlinTest = new KotlinTest();
         kotlinTest.testKotlinInheritance();
         kotlinTest.testKotlinArray();
+        kotlinTest.testDagger2();
 
     }
 

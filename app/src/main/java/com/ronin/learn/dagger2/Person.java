@@ -15,6 +15,6 @@ public class Person {
 
     @Override
     public String toString() {
-        return "person tostring";
+        return "person info";
     }
 }
