@@ -1,6 +1,7 @@
 package com.ronin.eventbus.kotlin;
 
 import com.ronin.learn.KotlinTest;
+import com.ronin.learn.dagger2.ComponentInject;
 
 import org.junit.Test;
 
@@ -26,6 +27,10 @@ public class ExampleUnitTest {
 
     }
 
+    @Test
+    public void testDagger2(){
+        new ComponentInject().init();
+    }
 
 
 }

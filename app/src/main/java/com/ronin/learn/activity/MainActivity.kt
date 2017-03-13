@@ -39,6 +39,7 @@ class MainActivity : AppCompatActivity() {
             startActivity<SecActivity>("from" to "MainActivity")
         }
 
+
         recyclerView.layoutManager = LinearLayoutManager(this)
         recyclerView.adapter = mAdapter
         testInline()
