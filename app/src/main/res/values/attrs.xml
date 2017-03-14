@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="HorProgressBar">
+        <attr name="h_color" format="color" />
+        <attr name="h_width" format="dimension" />
+        <attr name="h_height" format="dimension" />
+    </declare-styleable>
+    
+    <declare-styleable name="ClockView">
+        <attr name="c_color" format="color" />
+        <attr name="c_width" format="dimension" />
+    </declare-styleable>
+</resources>
