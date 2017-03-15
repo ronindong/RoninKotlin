@@ -4,10 +4,10 @@ sudo: false
 android:
   components:
   - build-tools-25.0.0
-  - android-24
+  - android-25
   - extra-android-support
   - extra-android-m2repository
 before_install:
   - chmod +x gradlew
 script:
-  - "./gradlew assembleRelease"
+  - ./gradlew assembleRelease
