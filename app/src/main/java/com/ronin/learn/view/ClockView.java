@@ -6,6 +6,7 @@ import android.graphics.Canvas;
 import android.graphics.Color;
 import android.graphics.Paint;
 import android.graphics.RectF;
+import android.os.Handler;
 import android.support.annotation.Nullable;
 import android.util.AttributeSet;
 import android.view.View;
@@ -46,6 +47,7 @@ public class ClockView extends View {
         mPaint.setAntiAlias(true);
         mPaint.setColor(mColor);
         mPaint.setStrokeWidth(mWidth);
+        new MyThead().start();
     }
 
     @Override
@@ -102,4 +104,20 @@ public class ClockView extends View {
                 rectF.centerX() + (float) 0.9 * rectF.width() / 2,
                 rectF.centerY() + (float) 0.9 * rectF.height() / 2);
     }
+
+    public static class MyThead extends Thread {
+        private Handler handler = null;
+
+        public MyThead() {
+            handler = new Handler();
+        }
+
+        @Override
+        public void run() {
+            super.run();
+            handler = new Handler();
+        }
+    }
+
+
 }

@@ -3,6 +3,8 @@ package com.ronin.learn.activity
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import com.ronin.eventbus.kotlin.R
+import kotlin.coroutines.experimental.Continuation
+import kotlin.coroutines.experimental.CoroutineContext
 
 class SecActivity : AppCompatActivity() {
 
@@ -49,4 +51,7 @@ class SecActivity : AppCompatActivity() {
 
 }
 
-inline fun testInline() {}
+inline fun testInline() {
+   var coroutine: CoroutineContext
+    var cont:Continuation<String>
+}

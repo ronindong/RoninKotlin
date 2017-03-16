@@ -29,8 +29,27 @@ public class ExampleUnitTest {
     }
 
     @Test
-    public void testDagger2(){
+    public void testDagger2() {
         new ComponentInject().init();
+    }
+
+    public static void change(String str) {
+        str = "akjfla";
+    }
+
+    @Test
+    public void testString() {
+        String str = "1";
+        change(str);
+        System.out.println(str);
+        int a = 14982759;
+        System.out.println("a:" + a);
+        while (a > 0) {
+            System.out.print(a % 10);
+            a = a / 10;
+        }
+        System.out.println();
+
     }
 
 
