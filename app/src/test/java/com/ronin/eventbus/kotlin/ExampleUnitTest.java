@@ -2,6 +2,7 @@ package com.ronin.eventbus.kotlin;
 
 import com.ronin.learn.KotlinTest;
 import com.ronin.learn.dagger2.ComponentInject;
+import com.ronin.learn.mode.builder.EventBusMessage;
 
 import org.junit.Test;
 
@@ -21,7 +22,7 @@ public class ExampleUnitTest {
 
     @Test
     public void testKotlinInheritance() {
-        KotlinTest kotlinTest = new KotlinTest();
+        KotlinTest kotlinTest = KotlinTest.Companion.instance();
         kotlinTest.testKotlinInheritance();
         kotlinTest.testKotlinArray();
         kotlinTest.testDagger2();
@@ -31,6 +32,8 @@ public class ExampleUnitTest {
     @Test
     public void testDagger2() {
         new ComponentInject().init();
+        EventBusMessage.of(1,9);
+
     }
 
     public static void change(String str) {
@@ -49,6 +52,7 @@ public class ExampleUnitTest {
             a = a / 10;
         }
         System.out.println();
+
 
     }
 
