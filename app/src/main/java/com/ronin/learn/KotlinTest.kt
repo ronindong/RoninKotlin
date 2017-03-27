@@ -5,6 +5,13 @@ import com.ronin.learn.inheritance.Fastson
 import com.ronin.learn.inheritance.Gson
 import com.ronin.learn.inheritance.IJson
 
+data class Info(val name:String,val age:Int)
+
+fun main(args: ArrayList<String>) {
+    val info = Info("dhl",28)
+    println(info)
+}
+
 /**
  * Created by Administrator on 2017/3/9.
  */

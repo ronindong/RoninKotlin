@@ -2,7 +2,6 @@ package com.ronin.eventbus.kotlin;
 
 import com.ronin.learn.KotlinTest;
 import com.ronin.learn.dagger2.ComponentInject;
-import com.ronin.learn.mode.builder.EventBusMessage;
 
 import org.junit.Test;
 
@@ -17,6 +16,13 @@ public class ExampleUnitTest {
     @Test
     public void addition_isCorrect() throws Exception {
         assertEquals(4, 2 + 2);
+        int a = 10,b=20;
+        method(a,b);
+        System.out.println("a="+a);
+        System.out.println("b="+b);
+    }
+
+    private static void method(int a,int b){
 
     }
 
@@ -32,7 +38,6 @@ public class ExampleUnitTest {
     @Test
     public void testDagger2() {
         new ComponentInject().init();
-        EventBusMessage.of(1,9);
 
     }
 

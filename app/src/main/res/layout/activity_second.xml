@@ -5,14 +5,9 @@
     android:layout_height="match_parent"
     android:orientation="vertical">
 
-    <com.ronin.learn.view.HorProgressBar
-        android:layout_width="match_parent"
-        android:layout_height="50dp" />
-
-    <com.ronin.learn.view.ClockView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        app:c_color="#0fd897"
-        app:c_width="2dp"/>
+    <TextView
+        android:id="@+id/tv_info"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
 
 </LinearLayout>

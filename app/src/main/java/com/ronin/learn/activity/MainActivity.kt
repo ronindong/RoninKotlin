@@ -10,7 +10,6 @@ import com.ronin.eventbus.kotlin.R
 import com.ronin.learn.adapter.MyAdapter
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.content_main.*
-import org.jetbrains.anko.find
 import org.jetbrains.anko.onClick
 import org.jetbrains.anko.startActivity
 
@@ -37,7 +36,7 @@ class MainActivity : AppCompatActivity() {
 
         textView.onClick {
             Toast.makeText(this,"onclick",Toast.LENGTH_SHORT).show()
-            startActivity<SecActivity>("from" to "MainActivity")
+            startActivity<SecActivity>("from" to "MainActivity","num" to 1)
         }
 
 
