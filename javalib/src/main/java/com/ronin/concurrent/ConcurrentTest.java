@@ -6,7 +6,7 @@ import java.util.concurrent.CyclicBarrier;
 import java.util.concurrent.Semaphore;
 
 /**
- * Created by Administrator on 2017/3/21.
+ * Created by Administrator on 2017/3/27.
  */
 
 public class ConcurrentTest {
@@ -15,11 +15,48 @@ public class ConcurrentTest {
 
 //        testCountDownLatch();
 //        testCyclicBarrier();
-        //
-        testSemaphore();
+//        testSemaphore();
+
+        testReentrantLock();
+    }
+
+    /**
+     * ReentrantLock:同步锁，
+     */
+    public static void testReentrantLock() {
+        int threadCount = 10;
+        final int count = 10000;
+        final SafeIncNumBean sib = new SafeIncNumBean();
+        final CountDownLatch cdl = new CountDownLatch(threadCount);
+        for (int i = 0; i < threadCount; i++) {
+            final int index = i;
+            new Thread() {
+                @Override
+                public void run() {
+                    super.run();
+                    for (int i = 0; i < count; i++) {
+                        sib.inc();
+                    }
+                    System.out.println("finish index:"+index);
+                    cdl.countDown();
+                }
+            }.start();
+        }
+
+        try {
+            cdl.await();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+
+        System.out.println("count total:"+sib.getCount());
 
     }
 
+
+    /**
+     * Semaphore：和锁类似，一般用于资源的访问控制
+     */
     public static void testSemaphore() {
         final int count = 8;
         final Semaphore semaphore = new Semaphore(5);
@@ -47,7 +84,7 @@ public class ConcurrentTest {
 
 
     /**
-     *
+     * CyclicBarrier：一般用于一组线程相互等待某个状态，然后同时运行
      */
     public static void testCyclicBarrier() {
         final int count = 5;
@@ -108,7 +145,7 @@ public class ConcurrentTest {
     }
 
     /**
-     *
+     * CountDownLatch：一般用于某个线程等待其他若干个线程执行完后，开始执行
      */
     public static void testCountDownLatch() {
         int count = 10;
