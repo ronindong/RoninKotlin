@@ -3,7 +3,9 @@ package com.ronin.concurrent;
 import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.CyclicBarrier;
+import java.util.concurrent.Exchanger;
 import java.util.concurrent.Semaphore;
+import java.util.concurrent.locks.Condition;
 
 /**
  * Created by Administrator on 2017/3/27.
@@ -13,11 +15,30 @@ public class ConcurrentTest {
 
     public static void main(String[] args) {
 
+        testExchanger();
 //        testCountDownLatch();
 //        testCyclicBarrier();
 //        testSemaphore();
+//        testReentrantLock();
+    }
 
-        testReentrantLock();
+    public static void testCondition(){
+        Condition condition ;
+        StringBuilder sd;
+        StringBuffer stringBuffer;
+
+    }
+
+
+    /**
+     *  线程间交换对象 exchanger
+     */
+    public static void testExchanger(){
+        Exchanger<Object> exchanger = new Exchanger<Object>();
+        ExchangeRunnable exchangeRunnableA = new ExchangeRunnable(exchanger, "aaa");
+        ExchangeRunnable exchangeRunnableB = new ExchangeRunnable(exchanger, "bbb");
+        new Thread(exchangeRunnableA).start();
+        new Thread(exchangeRunnableB).start();
     }
 
     /**
