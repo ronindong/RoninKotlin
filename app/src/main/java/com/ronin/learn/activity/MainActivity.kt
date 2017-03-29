@@ -10,6 +10,7 @@ import com.ronin.eventbus.kotlin.R
 import com.ronin.learn.adapter.MyAdapter
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.content_main.*
+import okhttp3.mockwebserver.MockWebServer
 import org.jetbrains.anko.onClick
 import org.jetbrains.anko.startActivity
 
@@ -17,6 +18,7 @@ class MainActivity : AppCompatActivity() {
 
     private val list: List<String> = listOf("adf", "2sdfas", "sfa", "sfga", "wdvh", "ksdg")
     var mAdapter: MyAdapter = MyAdapter(list)
+    lateinit var mockWebSocket:MockWebServer;
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)

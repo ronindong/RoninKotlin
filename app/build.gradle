@@ -46,6 +46,8 @@ dependencies {
     provided 'org.glassfish:javax.annotation:10.0-b28'
     compile depend["dagger2apt"]
     compile depend["dagger2"]
+    compile depend["okhttp"]
+    compile depend["mockwebserver"]
 
 }
 
