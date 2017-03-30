@@ -48,6 +48,8 @@ dependencies {
     compile depend["dagger2"]
     compile depend["okhttp"]
     compile depend["mockwebserver"]
+    compile depend["brvah"]
+    compile depend["cardview_v7"]
 
 }
 

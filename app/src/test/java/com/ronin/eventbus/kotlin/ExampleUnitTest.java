@@ -5,6 +5,8 @@ import com.ronin.learn.dagger2.ComponentInject;
 
 import org.junit.Test;
 
+import java.io.Serializable;
+
 import static org.junit.Assert.assertEquals;
 
 /**
@@ -16,6 +18,7 @@ public class ExampleUnitTest {
 
     public void testServer(){
 
+        Serializable serializable= new Serializable(){};
     }
 
     @Test
