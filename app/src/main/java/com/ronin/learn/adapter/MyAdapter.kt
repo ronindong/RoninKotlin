@@ -43,10 +43,10 @@ class MyAdapter
             2 -> helper.setImageResource(R.id.imgView, R.drawable.animation_img3)
         }
 
-        helper.setText(R.id.tweetName, "Hoteis in Rio de Janeiro")
+        helper.getView<TextView>(R.id.tweetName)?.text = "Hoteis in Rio de Janeiro"
         val msg = "\"He was one of Australia's most of distinguished artistes, renowned for his portraits\""
-        helper.getView<TextView>(R.id.tweetText).setText(msg)
-        helper.getView<TextView>(R.id.tweetText).movementMethod = LinkMovementMethod()
+        helper.getView<TextView>(R.id.tweetText)?.text = msg
+        helper.getView<TextView>(R.id.tweetText)?.movementMethod = LinkMovementMethod()
 
     }
 
