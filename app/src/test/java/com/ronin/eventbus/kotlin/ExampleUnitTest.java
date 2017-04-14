@@ -69,5 +69,9 @@ public class ExampleUnitTest {
 
     }
 
+    @Test
+    public void testProxy(){
+        Socket5Proxy
+    }
 
 }

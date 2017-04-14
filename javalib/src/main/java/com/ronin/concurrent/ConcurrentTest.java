@@ -15,15 +15,17 @@ public class ConcurrentTest {
 
     public static void main(String[] args) {
 
-        testExchanger();
+//        testExchanger();
 //        testCountDownLatch();
-//        testCyclicBarrier();
+        testCyclicBarrier();
 //        testSemaphore();
 //        testReentrantLock();
     }
 
-    public static void testCondition(){
-        Condition condition ;
+
+
+    public static void testCondition() {
+        Condition condition;
         StringBuilder sd;
         StringBuffer stringBuffer;
 
@@ -31,9 +33,9 @@ public class ConcurrentTest {
 
 
     /**
-     *  线程间交换对象 exchanger
+     * 线程间交换对象 exchanger
      */
-    public static void testExchanger(){
+    public static void testExchanger() {
         Exchanger<Object> exchanger = new Exchanger<Object>();
         ExchangeRunnable exchangeRunnableA = new ExchangeRunnable(exchanger, "aaa");
         ExchangeRunnable exchangeRunnableB = new ExchangeRunnable(exchanger, "bbb");
@@ -58,7 +60,7 @@ public class ConcurrentTest {
                     for (int i = 0; i < count; i++) {
                         sib.inc();
                     }
-                    System.out.println("finish index:"+index);
+                    System.out.println("finish index:" + index);
                     cdl.countDown();
                 }
             }.start();
@@ -70,7 +72,7 @@ public class ConcurrentTest {
             e.printStackTrace();
         }
 
-        System.out.println("count total:"+sib.getCount());
+        System.out.println("count total:" + sib.getCount());
 
     }
 

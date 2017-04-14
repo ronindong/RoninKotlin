@@ -50,6 +50,7 @@ dependencies {
     compile depend["mockwebserver"]
     compile depend["brvah"]
     compile depend["cardview_v7"]
+    compile project(path: ':javalib')
 
 }
 
