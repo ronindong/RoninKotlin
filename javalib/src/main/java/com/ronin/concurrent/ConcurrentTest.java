@@ -4,6 +4,11 @@ import java.util.concurrent.BrokenBarrierException;
 import java.util.concurrent.CountDownLatch;
 import java.util.concurrent.CyclicBarrier;
 import java.util.concurrent.Exchanger;
+import java.util.concurrent.ExecutionException;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.Future;
+import java.util.concurrent.FutureTask;
 import java.util.concurrent.Semaphore;
 import java.util.concurrent.locks.Condition;
 
@@ -15,19 +20,58 @@ public class ConcurrentTest {
 
     public static void main(String[] args) {
 
+
+        testCallableAndFutureTask();
+//        testCallableAndFuture();
 //        testExchanger();
 //        testCountDownLatch();
-        testCyclicBarrier();
+//        testCyclicBarrier();
 //        testSemaphore();
 //        testReentrantLock();
+
     }
 
+    public static void testCallableAndFutureTask() {
+
+        ExecutorService executorService = Executors.newSingleThreadExecutor();
+        CustomTask task = new CustomTask(100);
+        FutureTask<Integer> futureTask = new FutureTask<>(task);
+        executorService.submit(futureTask);
+        executorService.shutdown();
+
+        try {
+            Integer integer = futureTask.get();
+            System.out.println("result:" + integer.intValue());
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
+
+    }
+
+    public static void testCallableAndFuture() {
+
+        ExecutorService executorService = Executors.newSingleThreadExecutor();
+        CustomTask task = new CustomTask(100);
+        Future<Integer> result = executorService.submit(task);
+        try {
+            Integer integer = result.get();
+            System.out.println("result:" + integer.intValue());
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        } catch (ExecutionException e) {
+            e.printStackTrace();
+        }
+
+    }
 
 
     public static void testCondition() {
         Condition condition;
         StringBuilder sd;
         StringBuffer stringBuffer;
+        Executors.newSingleThreadExecutor();
 
     }
 
