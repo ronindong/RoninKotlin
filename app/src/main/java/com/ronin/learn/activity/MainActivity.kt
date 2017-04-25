@@ -7,6 +7,9 @@ import android.widget.Toast
 import com.ronin.eventbus.kotlin.R
 import com.ronin.learn.adapter.MyAdapter
 import com.ronin.learn.entity.Status
+import com.ronin.learn.ibinderpool.BinderPool
+import com.ronin.learn.ibinderpool.ComputeImpl
+import com.ronin.learn.ibinderpool.LoginImpl
 import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.content_main.*
 import okhttp3.mockwebserver.MockWebServer
@@ -55,6 +58,8 @@ class MainActivity : AppCompatActivity() {
         recyclerView.adapter = mAdapter
 
     }
+
+
 
 }
 
