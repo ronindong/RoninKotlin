@@ -19,7 +19,8 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="com.ronin.learn.activity.SecActivity"></activity>
+        <activity android:name="com.ronin.learn.activity.SecActivity" />
+        <activity android:name="com.ronin.learn.activity.TestActivity"></activity>
     </application>
 
 </manifest>

@@ -42,6 +42,7 @@ public class ConcurrentTest {
         try {
             Integer integer = futureTask.get();
             System.out.println("result:" + integer.intValue());
+
         } catch (InterruptedException e) {
             e.printStackTrace();
         } catch (ExecutionException e) {
