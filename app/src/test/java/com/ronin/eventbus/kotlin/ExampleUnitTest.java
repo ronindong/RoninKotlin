@@ -2,6 +2,7 @@ package com.ronin.eventbus.kotlin;
 
 import com.ronin.learn.KotlinTest;
 import com.ronin.learn.dagger2.ComponentInject;
+import com.ronin.learn.util.XThread;
 
 import org.junit.Test;
 
@@ -28,6 +29,14 @@ public class ExampleUnitTest {
         method(a,b);
         System.out.println("a="+a);
         System.out.println("b="+b);
+
+        XThread.execute(new Runnable() {
+            @Override
+            public void run() {
+                System.out.println("----xthred");
+            }
+        });
+
     }
 
     private static void method(int a,int b){

@@ -48,5 +48,6 @@ public class TestActivity extends AppCompatActivity {
         } catch (RemoteException e) {
             e.printStackTrace();
         }
+
     }
 }

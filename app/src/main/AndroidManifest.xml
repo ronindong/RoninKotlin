@@ -13,15 +13,14 @@
             android:name="com.ronin.learn.activity.MainActivity"
             android:label="@string/title_activity_main"
             android:theme="@style/AppTheme.NoActionBar">
-
-        </activity>
-        <activity android:name="com.ronin.learn.activity.SecActivity" />
-        <activity android:name="com.ronin.learn.activity.TestActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
+
         </activity>
+        <activity android:name="com.ronin.learn.activity.SecActivity" />
+        <activity android:name="com.ronin.learn.activity.TestActivity" />
 
         <service
             android:name="com.ronin.learn.ibinderpool.BinderPoolService"

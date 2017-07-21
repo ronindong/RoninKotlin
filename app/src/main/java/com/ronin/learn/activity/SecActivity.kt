@@ -1,8 +1,10 @@
 package com.ronin.learn.activity
 
 import android.os.Bundle
+import android.os.Message
 import android.support.v7.app.AppCompatActivity
 import com.ronin.eventbus.kotlin.R
+import com.ronin.learn.util.XHandler
 import kotlinx.android.synthetic.main.activity_second.*
 
 class SecActivity : AppCompatActivity() {
@@ -30,6 +32,13 @@ class SecActivity : AppCompatActivity() {
         val cls = SecActivity().javaClass
     }
 
+    var xhandler1: XHandler = object : XHandler() {
+        override fun handleMessageOnWorker(msg: Message?) {
+            super.handleMessageOnWorker(msg)
+            println("1-->handleMessageOnWorker")
+        }
+    }
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_second)
@@ -39,6 +48,7 @@ class SecActivity : AppCompatActivity() {
         else
             intent.extras["from"]?.toString()+intent.extras["num"]?.toString()
 
+        xhandler1.sendEmptyMessageOnWorker(0)
         /*relativeLayout {
             textView {
                 text = if (intent == null)

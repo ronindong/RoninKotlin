@@ -15,7 +15,7 @@ ext {
      * 引用库版本号
      */
 
-    appcompat_v7Version = "25.1.0"
+    appcompat_v7Version = "25.1.1"
     constraintVersion = "constraint-layout:1.0.0-beta4"
 
     rxjavaVersion = "1.1.6"
